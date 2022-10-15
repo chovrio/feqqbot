@@ -26,11 +26,9 @@ bot.on("message", (msg) => {
         switch (true) {
             case judge(['help']):
                 msg.reply(
-                    `试试问我以下问题叭\n【提问清单】\n${reply.help.map((item) => {
+                    `试试问我以下问题叭\n【提问清单】${reply.help.map((item) => {
                         return `\n${item}`
-                    }).join('')}
-                `
-                    , true);
+                    }).join('')}`, true);
                 break;
             case judge(['天气']):
                 weather(msg);
