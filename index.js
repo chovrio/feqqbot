@@ -24,7 +24,6 @@ require("./plugin/plugin-request") // 加群和好友
 require("./plugin/plugin-online") // 监听上线事件
 require("./plugin/plugin-time")(837470119)// 定时发送消息
 require("./plugin/plugin-poke")// 回戳
-require("./plugin/plugin-weather")// 天气
 process.on("unhandledRejection", (reason, promise) => {
 	console.log('Unhandled Rejection at:', promise, 'reason:', reason)
 })
