@@ -1,6 +1,6 @@
 "use strict"
 const { segment } = require("oicq")
-const { bot,users } = require("../index")
+const { bot, users } = require("../index")
 const reply = require("../reply.json")
 const weather = require("./plugin-weather")
 const augur = require("./plugin-augur")
@@ -19,18 +19,16 @@ bot.on("message", (msg) => {
             console.log(strArr);
             let flag = true
             strArr.map((item) => {
-                if (!eval(`/${item}/`).test(text)) flag = false
+                if (!text.includes(item)) flag = false
             })
             return flag
         }
         switch (true) {
             case judge(['help']):
-
                 msg.reply(
-                    `试试问我以下问题叭\n\n【提问清单】
-                    ${reply.help.map((item) => {
+                    `试试问我以下问题叭\n【提问清单】\n${reply.help.map((item) => {
                         return `\n${item}`
-                    })}
+                    }).join('')}
                 `
                     , true);
                 break;
