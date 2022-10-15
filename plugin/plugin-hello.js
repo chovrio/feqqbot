@@ -1,24 +1,30 @@
 "use strict"
 const { segment } = require("oicq")
-const { bot } = require("../index")
-
+const bot = require("../index")
+const weather = require("./plugin-weather")
 // hello world
 bot.on("message", function (msg) {
 	if (msg.atme) {
-		let text = msg.message[1].text
-		console.log(msg.message[1].text);
-		switch (text) {
-			case ' 近期推文':
-				msg.reply("不吃", true)
+		let text = msg.message[1].text.trim()
+		console.log(1);
+		let fn = str => eval(`/${str}/`).test(text)
+		console.log(2);
+		console.log(fn("近期推文"));
+		switch (true) {
+			case fn('近期推文'):
+				msg.reply(`先睹为快即将到来的HTML6：https://juejin.cn/post/7032874253573685261\n7 个少见但有用的 HTML 属性：https://juejin.cn/post/7085863634449989639\nhtml篇--这可能是目前较为全面的html面试知识点了吧：https://juejin.cn/post/6844904180943945742`, true)
 				break;
-			case ' 睡觉':
+			case fn('睡觉'):
 				msg.reply("不睡", true)
 				break;
-			case ' 打豆豆':
+			case fn('打豆豆'):
 				msg.reply("不打", true)
 				break
-			case ' help':
-				msg.reply(`试着对我说\n关于前端\n睡觉\n打豆豆`, true)
+			case fn('help'):
+				msg.reply(`试着对我说\n近期推文\n城市天气，例：重庆天气`, true)
+				break;
+			case fn("天气"):
+				weather(msg)
 				break;
 			default:
 				msg.reply("不知道你要干嘛，试着对我发送help吧!", true)
