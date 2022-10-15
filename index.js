@@ -22,7 +22,7 @@ require("./plugin/plugin-hello") // hello world
 require("./plugin/plugin-image") // 发送图文和表情
 require("./plugin/plugin-request") // 加群和好友
 require("./plugin/plugin-online") // 监听上线事件
-require("./plugin/plugin-time")(768135086)// 定时发送消息
+require("./plugin/plugin-time")(837470119)// 定时发送消息
 require("./plugin/plugin-poke")// 回戳
 require("./plugin/plugin-weather")// 天气
 process.on("unhandledRejection", (reason, promise) => {
