@@ -1,10 +1,9 @@
 "use strict"
 const { segment } = require("oicq")
-const { bot } = require("../index")
+const { bot,users } = require("../index")
 const reply = require("../reply.json")
 const weather = require("./plugin-weather")
 const augur = require("./plugin-augur")
-
 
 bot.on("message", (msg) => {
     if (msg.atme) {

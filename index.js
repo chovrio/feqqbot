@@ -2,7 +2,6 @@
 const { createClient } = require("oicq")
 const bot = createClient(2276406925)
 let users = [];
-const date = new Date();
 // 密码登录
 // bot.on("system.login.slider", function (e) {
 // console.log("输入ticket：")
@@ -17,7 +16,8 @@ bot.on("system.login.qrcode", function (e) {
 	})
 }).login()
 
-
+module.exports.bot = bot
+module.exports.users = users
 // template plugins
 //require("./plugin/plugin-hello") // hello world
 require("./plugin/plugin-chat")
@@ -29,8 +29,13 @@ require("./plugin/plugin-chat")
 process.on("unhandledRejection", (reason, promise) => {
 	console.log('Unhandled Rejection at:', promise, 'reason:', reason)
 })
-// setInterval(() => {
-// 	console.log(date.valueOf());
-// }, 1000)
-module.exports.bot = bot
-module.exports.users = users
+if (users.length > 0) {
+	console.log(users);
+	setInterval(() => {
+		const date = new Date();
+		console.log(date.getSeconds());
+		if (date.getHours() === 0 && date.getMinutes() === 0 && date.getSeconds() === 0) {
+			users = []
+		}
+	}, 1000)
+}
