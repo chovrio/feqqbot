@@ -1,6 +1,6 @@
 "use strict"
 const { createClient } = require("oicq")
-const bot = createClient(2153389851)
+const bot = createClient(2276406925)
 
 // 密码登录
 // bot.on("system.login.slider", function (e) {
@@ -18,7 +18,8 @@ bot.on("system.login.qrcode", function (e) {
 module.exports = bot
 
 // template plugins
-require("./plugin/plugin-hello") // hello world
+//require("./plugin/plugin-hello") // hello world
+require("./plugin/plugin-chat")
 require("./plugin/plugin-image") // 发送图文和表情
 require("./plugin/plugin-request") // 加群和好友
 require("./plugin/plugin-online") // 监听上线事件

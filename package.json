@@ -9,6 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "nodemon": "^2.0.20",
     "oicq": "^2.2.0"
   },
   "devDependencies": {
