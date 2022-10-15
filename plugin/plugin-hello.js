@@ -6,10 +6,17 @@ const weather = require("./plugin-weather")
 bot.on("message", function (msg) {
 	if (msg.atme) {
 		let text = msg.message[1].text.trim()
-		console.log(1);
-		let fn = str => eval(`/${str}/`).test(text)
-		console.log(2);
-		console.log(fn("近期推文"));
+		// let fn = str => eval(`/${str}/`).test(text)
+		/**
+		 * @param {string []} strArr 
+		 */
+		let fn = (strArr) => {
+			let flag = true
+			strArr.map((item) => {
+				if (!eval(`/${item}/`).test(text)) flag = false
+			})
+			return flag
+		}
 		switch (true) {
 			case fn('近期推文'):
 				msg.reply(`先睹为快即将到来的HTML6：https://juejin.cn/post/7032874253573685261\n7 个少见但有用的 HTML 属性：https://juejin.cn/post/7085863634449989639\nhtml篇--这可能是目前较为全面的html面试知识点了吧：https://juejin.cn/post/6844904180943945742`, true)
