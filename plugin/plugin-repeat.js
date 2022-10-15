@@ -1,4 +1,4 @@
-const bot = require("../index")
+const { bot } = require("../index")
 const { segment } = require("oicq")
 
 let count = (function (repeat = 2) {

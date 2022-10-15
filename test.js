@@ -5,3 +5,5 @@ let message = [
 let text;
 message.forEach(item => {
 })
+const { bot } = require('./index')
+console.log(bot);

@@ -1,4 +1,4 @@
-const bot = require("../index")
+const { bot } = require("../index")
 const url = 'https://v0.yiketianqi.com/api?unescape=1&version=v61&appid=23161882&appsecret=G20Ptaq8&city=';
 const https = require('https')
 module.exports = function weather(msg) {

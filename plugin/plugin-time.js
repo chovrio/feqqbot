@@ -1,5 +1,5 @@
 const { segment } = require("oicq")
-const bot = require("../index")
+const { bot ,users} = require("../index")
 const path = require("path")
 console.log(path.join(__dirname, '../img/sleep.jpg'));
 let arr = []

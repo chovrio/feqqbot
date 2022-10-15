@@ -1,5 +1,5 @@
 "use strict"
-const bot = require("../index")
+const { bot } = require("../index")
 const { segment } = require("oicq")
 
 bot.on("system.online", function () {
