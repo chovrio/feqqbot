@@ -6,6 +6,7 @@ const weather = require("./plugin-weather")
 bot.on("message", function (msg) {
 	if (msg.atme) {
 		let text = msg.message[1].text.trim()
+		//console.log(msg);
 		// let fn = str => eval(`/${str}/`).test(text)
 		/**
 		 * @param {string []} strArr 
@@ -21,7 +22,7 @@ bot.on("message", function (msg) {
 			case fn('近期推文'):
 				msg.reply(`先睹为快即将到来的HTML6：https://juejin.cn/post/7032874253573685261\n7 个少见但有用的 HTML 属性：https://juejin.cn/post/7085863634449989639\nhtml篇--这可能是目前较为全面的html面试知识点了吧：https://juejin.cn/post/6844904180943945742`, true)
 				break;
-			case fn('睡觉'):
+			case fn(['睡觉']):
 				msg.reply("不睡", true)
 				break;
 			case fn('打豆豆'):
