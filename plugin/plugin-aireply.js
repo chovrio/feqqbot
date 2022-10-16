@@ -3,7 +3,7 @@ const http = require("http");
 const { segment } = require("oicq");
 const path = require("path");
 const parseToReply = require("../utils/parse")
-
+const parse = require("../utils/parse")
 const message1 = [
   "不知道你要干嘛，试着对我发送help吧!",
   segment.face(300),
@@ -25,8 +25,7 @@ module.exports = function talk(msg) {
       });
       res.on('end', async () => {
         const data = await JSON.parse(Buffer.concat(list).toString());
-        console.log(data);
-        parseToReply(data.content,msg)
+        parseToReply(parse(data.content, msg))
         // msg.reply(content, true)
       });
     }).on("error", err => {
