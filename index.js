@@ -1,6 +1,6 @@
 "use strict"
 const { createClient } = require("oicq")
-const bot = createClient(2153389851)
+const bot = createClient(2548438264)
 let users = [];
 let msgs = []
 // 密码登录
