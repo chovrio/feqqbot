@@ -4,15 +4,10 @@ const reply = require("../reply.json")
 const weather = require("./plugin-weather")
 const augur = require("./plugin-augur")
 const aiReply = require("./plugin-aireply")
-const path = require("path")
-const message1 = [
-    "不知道你要干嘛，试着对我发送help吧!",
-    segment.face(300),
-    segment.image(path.join(__dirname, '../img/dancun.jpg'))
-]
 bot.on("message", (msg) => {
     if (msg.atme) {
         let text;
+        console.log(msg.message);
         msg.message.map((item) => {
             if (item.type == 'text') {
                 text = item.text.trim()
@@ -21,7 +16,6 @@ bot.on("message", (msg) => {
         /**
          * @param {string []} strArr 
          */
-
         let judge = (strArr) => {
             let flag = true
             strArr.map((item) => {
@@ -30,9 +24,6 @@ bot.on("message", (msg) => {
             return flag
         }
         switch (true) {
-            case judge(['']):
-                msg.reply(message1, true)
-                break
             case judge(['help']):
                 msg.reply(
                     `试试问我以下问题叭\n【提问清单】${reply.help.map((item) => {

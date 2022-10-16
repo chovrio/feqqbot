@@ -25,8 +25,8 @@ module.exports = function talk(msg) {
       });
       res.on('end', async () => {
         const data = await JSON.parse(Buffer.concat(list).toString());
-        parseToReply(parse(data.content, msg))
-        // msg.reply(content, true)
+        if (data.result == 1) msg.reply(message1)
+        else parseToReply(parse(data.content, msg))
       });
     }).on("error", err => {
       console.log('Error: ', err.message);
