@@ -17,7 +17,7 @@ module.exports.msgs = msgs
 require("./plugin/plugin-chat")
 require("./plugin/plugin-image") // 发送图文和表情
 require("./plugin/plugin-request") // 加群和好友
-require("./plugin/plugin-online") // 监听上线事件
+require("./plugin/plugin-online")(152428380) // 监听上下线事件
 require("./plugin/plugin-time")(152428380)// 定时发送消息
 require("./plugin/plugin-poke")// 回戳
 process.on("unhandledRejection", (reason, promise) => {
