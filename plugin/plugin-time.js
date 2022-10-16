@@ -32,12 +32,10 @@ function timeMsg(group) {
 
   setInterval(() => {
     let time = new Date()
-    // if (time.getHours() == 8 && time.getMinutes() == 0 && time.getSeconds() == 0) {
-    if (time.getHours() == 10 && time.getMinutes() == 30 && time.getSeconds() == 0) {
+    if (time.getHours() == 8 && time.getMinutes() == 0 && time.getSeconds() == 0) {
       bot.sendGroupMsg(group, day[Math.floor(Math.random() * day.length)])
     }
-    // if (time.getHours() == 23 && time.getMinutes() == 30 && time.getSeconds() == 30) {
-    if (time.getHours() == 10 && time.getMinutes() == 30 && time.getSeconds() == 00) {
+    if (time.getHours() == 23 && time.getMinutes() == 30 && time.getSeconds() == 30) {
       bot.sendGroupMsg(group, night[Math.floor(Math.random() * night.length)])
     }
   }, 1000)
