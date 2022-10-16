@@ -2,6 +2,7 @@
 const { createClient } = require("oicq")
 const bot = createClient(2153389851)
 let users = [];
+let msgs = []
 // 密码登录
 // bot.on("system.login.slider", function (e) {
 // console.log("输入ticket：")
@@ -18,6 +19,7 @@ bot.on("system.login.qrcode", function (e) {
 
 module.exports.bot = bot
 module.exports.users = users
+module.exports.msgs = msgs
 // template plugins
 //require("./plugin/plugin-hello") // hello world
 require("./plugin/plugin-chat")

@@ -11,26 +11,30 @@ module.exports = function weather(msg) {
     })
     console.log(text);
     let m = /天气/
-    if (m.test(text)) {
-      let city = text.trim().replace("天气", '').replace("@蒸汽人", "")
-      console.log(url + city);
-      https.get(url + city, res => {
-        let list = [];
-        res.on('data', chunk => {
-          list.push(chunk);
+    if (text == '天气') {
+      msg.reply("查询格式：城市+天气", true)
+    } else {
+      if (m.test(text)) {
+        let city = text.trim().replace("天气", '').replace("@蒸汽人", "")
+        console.log(url + city);
+        https.get(url + city, res => {
+          let list = [];
+          res.on('data', chunk => {
+            list.push(chunk);
+          });
+          res.on('end', async () => {
+            const data = await JSON.parse(Buffer.concat(list).toString());
+            if (data.errcode !== 100) {
+              msg.reply(`${city}今天${data.wea}${data.win},最低温度${data.tem2}°，最高温度${data.tem1}°。${data.air_tips}${data.aqi.kouzhao},${data.aqi.yundong},${data.aqi.waichu}。`, true)
+            } else {
+              msg.reply(`${city}不在数据库内`)
+            }
+          });
+        }).on('error', err => {
+          console.log('Error: ', err.message);
+          msg.reply(`${city}不在数据库内`)
         });
-        res.on('end', async () => {
-          const data = await JSON.parse(Buffer.concat(list).toString());
-          if (data.errcode !== 100) {
-            msg.reply(`${city}今天${data.wea}${data.win},最低温度${data.tem2}°，最高温度${data.tem1}°。${data.air_tips}${data.aqi.kouzhao},${data.aqi.yundong},${data.aqi.waichu}。`, true)
-          } else {
-            msg.reply(`${city}不在数据库内`)
-          }
-        });
-      }).on('error', err => {
-        console.log('Error: ', err.message);
-        msg.reply(`${city}不在数据库内`)
-      });
+      }
     }
   }
 }
