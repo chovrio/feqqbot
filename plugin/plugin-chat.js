@@ -1,20 +1,10 @@
 "use strict"
-const { segment } = require("oicq")
-const { bot, users } = require("../index")
+const { bot } = require("../index")
 const reply = require("../reply.json")
 const weather = require("./plugin-weather")
 const augur = require("./plugin-augur")
+const aiReply = require("./plugin-aireply")
 const path = require("path")
-const message1 = [
-    "不知道你要干嘛，试着对我发送help吧!",
-    segment.face(300),
-    segment.image(path.join(__dirname, '../img/dancun.jpg'))
-]
-const message2 = [
-    "不知道你要干嘛，试着对我发送help吧!",
-    segment.face(300),
-    segment.image(path.join(__dirname, '../img/dancun.jpg'))
-]
 bot.on("message", (msg) => {
     if (msg.atme) {
         let text;
@@ -66,7 +56,7 @@ bot.on("message", (msg) => {
                 augur(msg)
                 break;
             default:
-                msg.reply(message1, true)
+                aiReply(msg)
                 break;
         }
     }
