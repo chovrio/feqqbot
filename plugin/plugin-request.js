@@ -8,4 +8,4 @@ bot.on("request.friend", e => e.approve(false))
 bot.on("request.group.invite", e => e.approve(false))
 
 // 同意加群申请，拒绝`e.approve(false)`
-bot.on("request.group.add", e => e.approve())
+// bot.on("request.group.add", e => e.approve(false))
