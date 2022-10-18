@@ -45,9 +45,11 @@ function timeMsg(group) {
       bot.sendGroupMsg(group, night[Math.floor(Math.random() * night.length)])
     }
     if (time.getHours() == 12 && time.getMinutes() == 0 && time.getSeconds() == 0) {
+      bot.sendGroupMsg(group, '吃饭时间到了，一起进行光盘打卡吧')
       bot.sendGroupMsg(group, message)
     }
     if (time.getHours() == 18 && time.getMinutes() == 0 && time.getSeconds() == 0) {
+      bot.sendGroupMsg(group, '吃饭时间到了，一起进行光盘打卡吧')
       bot.sendGroupMsg(group, message)
     }
   }, 1000)

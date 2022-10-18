@@ -27,7 +27,7 @@ if (users.length > 0) {
 	console.log(users);
 	setInterval(() => {
 		const date = new Date();
-		if (date.getHours() === 0 && date.getMinutes() === 0 && date.getSeconds() === 0) {
+		if ((date.getHours() === 0 || date.getHours() === 24) && date.getMinutes() === 0 && date.getSeconds() === 0) {
 			users = []
 			msgs = []
 		}
