@@ -3,6 +3,7 @@ const { bot } = require("../index")
 const reply = require("../reply.json")
 const weather = require("./plugin-weather")
 const augur = require("./plugin-augur")
+const music = require("./plugin-music")
 const { segment } = require("oicq");
 const path = require("path");
 const message1 = [
@@ -68,6 +69,9 @@ bot.on("message", (msg) => {
                 break;
             case judge(['不明所以']):
                 augur(msg)
+                break;
+            case judge(['网易云']):
+                music(msg);
                 break;
             default:
                 // aiReply(msg)
