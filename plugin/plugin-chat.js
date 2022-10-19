@@ -18,7 +18,6 @@ const message = [
     }
 ]
 bot.on("message", (msg) => {
-    console.log(msg, 1111);
     if (msg.atme) {
         let text;
         msg.message.map((item) => {
@@ -59,7 +58,7 @@ bot.on("message", (msg) => {
                 msg.reply("我们提交作业的邮箱地址是：fe@redrock.team", true);
                 break;
             case judge(['推文']):
-                msg.reply(`先睹为快即将到来的HTML6：https://juejin.cn/post/7032874253573685261\n7 个少见但有用的 HTML 属性：https://juejin.cn/post/7085863634449989639\nhtml篇--这可能是目前较为全面的html面试知识点了吧：https://juejin.cn/post/6844904180943945742\nCSS 实现多行文本“展开收起”：https://juejin.cn/post/6963904955262435336\n如何用 CSS 中写出超级美丽的阴影效果：https://juejin.cn/post/7034323356459466760`, true)
+                msg.reply(`7 个少见但有用的 HTML 属性：https://juejin.cn/post/7085863634449989639\nhtml篇--这可能是目前较为全面的html面试知识点了吧：https://juejin.cn/post/6844904180943945742\nCSS 实现多行文本“展开收起”：https://juejin.cn/post/6963904955262435336\n如何用 CSS 中写出超级美丽的阴影效果：https://juejin.cn/post/7034323356459466760\nCSS 奇思妙想边框动画：https://juejin.cn/post/6918921604160290830`, true)
                 break;
             case judge(['抽签']):
                 augur(msg);

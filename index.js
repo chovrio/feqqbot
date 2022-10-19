@@ -23,13 +23,10 @@ require("./plugin/plugin-poke")// 回戳
 process.on("unhandledRejection", (reason, promise) => {
 	console.log('Unhandled Rejection at:', promise, 'reason:', reason)
 })
-if (users.length > 0) {
-	console.log(users);
-	setInterval(() => {
-		const date = new Date();
-		if ((date.getHours() === 0 || date.getHours() === 24) && date.getMinutes() === 0 && date.getSeconds() === 0) {
-			users = []
-			msgs = []
-		}
-	}, 1000)
-}
+setInterval(() => {
+	const date = new Date();
+	if ((date.getHours() === 0 || date.getHours() === 24) && date.getMinutes() === 0 && date.getSeconds() === 0) {
+		users = []
+		msgs = []
+	}
+}, 1000)
