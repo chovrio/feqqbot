@@ -1,5 +1,6 @@
 const url = 'https://api.fanlisky.cn/api/qr-fortune/get/';
 let url1 = 'https://api.fanlisky.cn/niuren/getSen'
+const url2 = 'https://api.vvhan.com/api/reping'
 const https = require('https')
 //let users = [] //用于判断用户是否抽过签
 let { users, msgs } = require("../index")
@@ -16,6 +17,7 @@ module.exports = function augur(msg) {
     let m = /抽签/
     let n = /解签/
     let v = /不明所以/
+    console.log(/网易云/.test(text));
     if (m.test(text)) { //抽签
       if (users.includes(user)) {
         msg.reply("今天已经抽过签了哦，明天再来吧 ^_^", true)
@@ -85,6 +87,21 @@ module.exports = function augur(msg) {
           msg.reply(`获得签文失败`)
         });
       }
+    } else if (/网易云/.test(text)) {
+      https.get(url2, (res) => {
+        let list = [];
+        res.on('data', (data) => {
+          list.push(data)
+        })
+        res.on('end', () => {
+          let comment = JSON.parse(Buffer.concat(list).toString());
+          msg.reply(`网易云热评:\n${comment.data.content}`)
+
+        })
+      }).on('error', (err) => {
+        console.log('Error: ' + err.message);
+        msg.reply('啊哦，菲菲不会了')
+      })
     }
   }
 }

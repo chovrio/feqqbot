@@ -75,7 +75,7 @@ bot.on("message", (msg) => {
                 augur(msg)
                 break;
             case judge(['网易云']):
-                music(msg);
+                augur(msg)
                 break;
             default:
                 aiReply(msg)
