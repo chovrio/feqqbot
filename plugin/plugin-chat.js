@@ -74,7 +74,7 @@ bot.on("message", (msg) => {
             case judge(['不明所以']):
                 augur(msg)
                 break;
-            case judge(['网易云']):
+            case judge(['听歌']):
                 augur(msg)
                 break;
             default:
