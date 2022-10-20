@@ -4,6 +4,7 @@ const reply = require("../reply.json")
 const weather = require("./plugin-weather")
 const augur = require("./plugin-augur")
 const music = require("./plugin-music")
+const aiReply = require("./plugin-aireply")
 const { segment } = require("oicq");
 const path = require("path");
 const message1 = [
@@ -37,6 +38,9 @@ bot.on("message", (msg) => {
             return flag
         }
         switch (true) {
+            case '':
+                msg.reply(message1, true)
+                break
             case judge(['光盘']):
                 msg.reply(message)
                 break;
@@ -74,8 +78,7 @@ bot.on("message", (msg) => {
                 music(msg);
                 break;
             default:
-                // aiReply(msg)
-                msg.reply(message1, true)
+                aiReply(msg)
                 break;
         }
     }
