@@ -39,12 +39,10 @@ function timeMsg(group) {
   setInterval(() => {
     let time = new Date()
     if (time.getHours() == 8 && time.getMinutes() == 0 && time.getSeconds() == 0) {
-      bot.login(true)
       bot.sendGroupMsg(group, day[Math.floor(Math.random() * day.length)])
     }
     if (time.getHours() == 23 && time.getMinutes() == 30 && time.getSeconds() == 30) {
       bot.sendGroupMsg(group, night[Math.floor(Math.random() * night.length)])
-      bot.logout(true)
     }
     if (time.getHours() == 12 && time.getMinutes() == 0 && time.getSeconds() == 0) {
       bot.sendGroupMsg(group, '吃饭时间到了，一起进行光盘打卡吧')
