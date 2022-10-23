@@ -62,7 +62,7 @@ bot.on("message", (msg) => {
                 msg.reply("我们提交作业的邮箱地址是：fe@redrock.team", true);
                 break;
             case judge(['推文']):
-                msg.reply(`连猴子都能懂的Git入门：https://backlog.com/git-tutorial/cn/\n使用flex布局制作伸缩面板（后面封装部分不用看）：https://www.bilibili.com/video/BV1BD4y1C7mC/?spm_id_from=333.999.0.0&vd_source=bc38a2ae927887bb02e2e5667790374e\n拓宽视野：漫画版前端发展史：https://juejin.cn/post/6901076337855823880`, true)
+                msg.reply(`连猴子都能懂的Git入门：https://backlog.com/git-tutorial/cn/\n使用flex布局制作伸缩面板（后面封装部分不用看）：https://www.bilibili.com/video/BV1BD4y1C7mC/?spm_id_from=333.999.0.0&vd_source=bc38a2ae927887bb02e2e5667790374e\n最强大的css布局方式：Grid布局：https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html\n拓宽视野：漫画版前端发展史：https://juejin.cn/post/6901076337855823880`, true)
                 break;
             case judge(['抽签']):
                 augur(msg);
