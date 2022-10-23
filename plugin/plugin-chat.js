@@ -62,7 +62,7 @@ bot.on("message", (msg) => {
                 msg.reply("我们提交作业的邮箱地址是：fe@redrock.team", true);
                 break;
             case judge(['推文']):
-                msg.reply(`7 个少见但有用的 HTML 属性：https://juejin.cn/post/7085863634449989639\nhtml篇--这可能是目前较为全面的html面试知识点了吧：https://juejin.cn/post/6844904180943945742\nCSS 实现多行文本“展开收起”：https://juejin.cn/post/6963904955262435336\n如何用 CSS 中写出超级美丽的阴影效果：https://juejin.cn/post/7034323356459466760\nCSS 奇思妙想边框动画：https://juejin.cn/post/6918921604160290830`, true)
+                msg.reply(`连猴子都能懂的Git入门：https://backlog.com/git-tutorial/cn/\n使用flex布局制作伸缩面板（后面封装部分不用看）：https://www.bilibili.com/video/BV1BD4y1C7mC/?spm_id_from=333.999.0.0&vd_source=bc38a2ae927887bb02e2e5667790374e\n拓宽视野：漫画版前端发展史：https://juejin.cn/post/6901076337855823880`, true)
                 break;
             case judge(['抽签']):
                 augur(msg);
