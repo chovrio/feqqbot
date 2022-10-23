@@ -3,7 +3,6 @@ const { bot } = require("../index")
 const reply = require("../reply.json")
 const weather = require("./plugin-weather")
 const augur = require("./plugin-augur")
-const music = require("./plugin-music")
 const aiReply = require("./plugin-aireply")
 const { segment } = require("oicq");
 const path = require("path");

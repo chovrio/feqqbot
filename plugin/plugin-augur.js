@@ -4,6 +4,14 @@ const https = require('https')
 //let users = [] //用于判断用户是否抽过签
 let { users, msgs } = require("../index")
 module.exports = function augur(msg) {
+  setInterval(() => {
+    const date = new Date();
+    if (date.getHours() === 23 && date.getMinutes() === 59 && date.getSeconds() === 59) {
+      console.log(users);
+      users = []
+      msgs = []
+    }
+  }, 1000)
   let user = msg.sender.user_id
   if (msg.atme) {
     let text;
@@ -26,7 +34,7 @@ module.exports = function augur(msg) {
             list.push(chunk);
           });
           res.on('end', async () => {
-            const data = Buffer.concat(list).toString()
+            const data = await JSON.parse(Buffer.concat(list).toString());
             if (data.errcode !== 100) {
               if (Math.random() < 0.1) msg.reply("不给你抽")
               else {
