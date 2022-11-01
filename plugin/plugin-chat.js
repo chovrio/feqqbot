@@ -62,7 +62,8 @@ bot.on("message", (msg) => {
                 msg.reply("我们提交作业的邮箱地址是：fe@redrock.team", true);
                 break;
             case judge(['推文']):
-                msg.reply(`连猴子都能懂的Git入门：https://backlog.com/git-tutorial/cn/\n使用flex布局制作伸缩面板（后面封装部分不用看）：https://www.bilibili.com/video/BV1BD4y1C7mC/?spm_id_from=333.999.0.0&vd_source=bc38a2ae927887bb02e2e5667790374e\n最强大的css布局方式：Grid布局：https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html\n拓宽视野：漫画版前端发展史：https://juejin.cn/post/6901076337855823880`, true)
+                //msg.reply(`连猴子都能懂的Git入门：https://backlog.com/git-tutorial/cn/\n使用flex布局制作伸缩面板（后面封装部分不用看）：https://www.bilibili.com/video/BV1BD4y1C7mC/?spm_id_from=333.999.0.0&vd_source=bc38a2ae927887bb02e2e5667790374e\n最强大的css布局方式：Grid布局：https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html\n拓宽视野：漫画版前端发展史：https://juejin.cn/post/6901076337855823880`, true)
+                msg.reply(`关于闭包：https://juejin.cn/post/7085560639317344269\n具体可以看看数组去重和扁平化（建议自己先写）：https://juejin.cn/post/6946022649768181774#heading-7\n关于JS中一些重要的api实现（难度有点高，有些概念暂未讲到，可以先看看）：https://juejin.cn/post/6844903924520992782`, true);
                 break;
             case judge(['抽签']):
                 augur(msg);
